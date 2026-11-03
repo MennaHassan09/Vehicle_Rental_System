@@ -30,10 +30,9 @@ namespace Vehicle_Rental_System
             while (true)
             {
                 Console.Write("Enter Customer ID : ");
-                try
-                {
+                
                     string id = Console.ReadLine();
-                    if (id.Length == 14 && id.All(char.IsDigit))
+                    if (!string.IsNullOrWhiteSpace(id) && id.Length == 14 && id.All(char.IsDigit))
                     {
                         return id;
                     }
@@ -43,14 +42,7 @@ namespace Vehicle_Rental_System
                         Console.WriteLine("ID must be a 14 Digits . ");
                         Console.ResetColor();
                     }
-                }
-                catch
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("invalid input!");
-                    Console.ResetColor();
-
-                }
+                
 
             }
 
@@ -64,7 +56,7 @@ namespace Vehicle_Rental_System
             {
                 Console.Write("Enter Customer Name : ");
                 string name = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(name))
+                if (!string.IsNullOrWhiteSpace(name) && name.All(c => char.IsLetter(c) )
                 {
                     return name;
                 }
@@ -83,7 +75,7 @@ namespace Vehicle_Rental_System
             {
                 Console.Write("Enter License Number : ");
                 string LicenseNumber = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(LicenseNumber))
+                if (!string.IsNullOrWhiteSpace(LicenseNumber) && licenseNumber.All(char.IsDigit))
                 {
                     return LicenseNumber;
                 }
