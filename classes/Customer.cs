@@ -40,7 +40,7 @@ namespace Vehicle_Rental_System
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("ID must be a positive number and 14 Digits . ");
+                        Console.WriteLine("ID must be a 14 Digits . ");
                         Console.ResetColor();
                     }
                 }
