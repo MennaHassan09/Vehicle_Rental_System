@@ -11,7 +11,7 @@ namespace Vehicle_Rental_System
         private string customerId;
         private string name;
         private string licenseNumber;
-        private List<Rental> currentRentals;
+       
         //______________________________________
         public Customer()        // constructor for set an initial value 
         {
@@ -19,7 +19,7 @@ namespace Vehicle_Rental_System
             customerId = ReadCustomerId();
 
             licenseNumber = ReadLicenseNumber();
-            currentRentals = new List<Rental>();
+            
 
         }
         //_______________________________
@@ -33,7 +33,7 @@ namespace Vehicle_Rental_System
                 try
                 {
                     string id = Console.ReadLine();
-                    if (id.Length > 0 && id.Length == 14)
+                    if (id.Length == 14 && id.All(char.IsDigit))
                     {
                         return id;
                     }
